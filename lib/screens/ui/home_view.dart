@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 
 import '../../utilities/constants.dart';
 import '../shared/bottom_bar_contents_view.dart';
+import '../shared/home/qualities_widget.dart';
 import '../shared/top_bar_contents_view.dart';
 
 class HomeView extends StatefulWidget {
@@ -15,106 +16,90 @@ class HomeView extends StatefulWidget {
 class _HomeViewState extends State<HomeView> {
   final double _opacity = 1.0;
   bool isMenuOpened = false;
+  final List _isSubMenuOpen = [
+    false,
+  ];
+
+  double getMenuHeight() {
+    double height = 300;
+    if (_isSubMenuOpen[0]) {
+      height += 300;
+    }
+    return height;
+  }
 
   @override
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
-    //_opacity =
     return Scaffold(
-      appBar: PreferredSize(
-          child: TopBaContentsView(
-            opacity: _opacity,
-          ),
-          preferredSize: Size(screenSize.width, 70)),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            screenSize.width < 900
-                ? Column(
-                    children: [
-                      Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 20),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text('Menu'),
-                            GestureDetector(
-                              onTap: () {
-                                if (mounted) {
-                                  setState(() {
-                                    isMenuOpened = !isMenuOpened;
-                                  });
-                                }
-                              },
-                              child: Icon(
-                                Icons.menu,
-                                color: Colors.blue,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      if (isMenuOpened) ...[
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            SizedBox(
-                              height: 24,
-                            ),
-                            Padding(
-                                padding: EdgeInsets.symmetric(horizontal: 20),
-                                child: GestureDetector(
-                                    onTap: () {
-                                      context.go('/$appDevelopmentRoute');
-                                    },
-                                    child: Text('App Development'))),
-                            Divider(),
-                            Padding(
-                                padding: EdgeInsets.symmetric(horizontal: 20),
-                                child: GestureDetector(
-                                    onTap: () {
-                                      context.go('/$websiteDevelopmentRoute');
-                                    },
-                                    child: Text('Website Development'))),
-                            Divider(),
-                            Padding(
-                                padding: EdgeInsets.symmetric(horizontal: 20),
-                                child: GestureDetector(
-                                    onTap: () {
-                                      context.go('/$costRoute');
-                                    },
-                                    child: Text('Cost To Build An App'))),
-                            Divider(),
-                            Padding(
-                              padding: EdgeInsets.symmetric(horizontal: 20),
-                              child: GestureDetector(
-                                  onTap: () {
-                                    context.go('/$successRoute');
-                                  },
-                                  child: Text('Our Success')),
-                            ),
-                            Divider(),
-                          ],
-                        ),
-                      ],
-                    ],
-                  )
-                : Container(),
-            Container(
-              child: SizedBox(
-                height: screenSize.height * 0.70,
-                width: screenSize.width,
-                child: Image.asset(
-                  'app1.jpg',
-                  fit: BoxFit.cover,
+      body: CustomScrollView(
+        slivers: [
+          SliverToBoxAdapter(
+            child: Column(
+              children: [
+                Container(
+                  width: screenSize.width,
+                  height: isMenuOpened ? getMenuHeight() : 100,
+                  child: TopBaContentsView(
+                    title: homeMenu,
+                    opacity: _opacity,
+                    isMenuOpened: isMenuOpened,
+                    toggleMenu: (value) {
+                      setState(() {
+                        isMenuOpened = value;
+                      });
+                    },
+                    isSubMenuOpen: _isSubMenuOpen,
+                    toggleSubMenu: (value, int) {
+                      setState(() {
+                        _isSubMenuOpen[int] = value;
+                      });
+                    },
+                  ),
                 ),
-              ),
+                Stack(
+                  alignment: Alignment.center,
+                  children: [
+                    SizedBox(
+                      height: screenSize.height,
+                      width: screenSize.width,
+                      child: Image.asset(
+                        'main.jpg',
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                    Container(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: screenSize.width < 1200
+                            ? 24
+                            : (24 + (screenSize.width - 1200) / 2),
+                      ),
+                      child: Column(
+                        children: [
+                          Text(
+                            'Be it hair, nails or skin - we have you covered',
+                            style: TextStyle(color: Colors.white, fontSize: 36),
+                            textAlign: TextAlign.center,
+                          ),
+                          Text(
+                            'CELEBRATING 25 YEARS IN UAE',
+                            style: TextStyle(color: Colors.white, fontSize: 72),
+                            textAlign: TextAlign.center,
+                          ),
+                        ],
+                      ),
+                    )
+                  ],
+                ),
+                QualitiesWidget(),
+                BottomBarContentsView(),
+              ],
             ),
-            BottomBarContentsView(),
-          ],
-        ),
+          ),
+        ],
       ),
       floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.green,
         child: Icon(Icons.call),
         onPressed: () {},
       ),

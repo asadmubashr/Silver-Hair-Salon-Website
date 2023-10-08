@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:website_base/screens/ui/menu/about_us_view.dart';
+import 'package:website_base/screens/ui/menu/gallery_view.dart';
 
 import '../screens/ui/app_development.dart';
 import '../screens/ui/cost.dart';
@@ -29,27 +31,15 @@ class MyAppRouter {
             },
           ),
           GoRoute(
-            path: appDevelopmentRoute,
+            path: aboutUsRoute,
             builder: (BuildContext context, GoRouterState state) {
-              return AppDevelopmentView();
+              return AboutUsView();
             },
           ),
           GoRoute(
-            path: websiteDevelopmentRoute,
+            path: galleryRoute,
             builder: (BuildContext context, GoRouterState state) {
-              return WebsiteDevelopmentView();
-            },
-          ),
-          GoRoute(
-            path: costRoute,
-            builder: (BuildContext context, GoRouterState state) {
-              return CostView();
-            },
-          ),
-          GoRoute(
-            path: successRoute,
-            builder: (BuildContext context, GoRouterState state) {
-              return SuccessView();
+              return GalleryView();
             },
           ),
         ],

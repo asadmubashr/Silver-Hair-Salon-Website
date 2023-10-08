@@ -12,6 +12,18 @@ class AppDevelopmentView extends StatefulWidget {
 
 class _AppDevelopmentViewState extends State<AppDevelopmentView> {
   final double _opacity = 1.0;
+  bool isMenuOpened = false;
+  final List _isSubMenuOpen = [
+    false,
+  ];
+
+  double getMenuHeight() {
+    double height = 375;
+    if (_isSubMenuOpen[0]) {
+      height += 160;
+    }
+    return height;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -19,9 +31,23 @@ class _AppDevelopmentViewState extends State<AppDevelopmentView> {
     return Scaffold(
       appBar: PreferredSize(
           child: TopBaContentsView(
+            title: 'App Development',
             opacity: _opacity,
+            isMenuOpened: isMenuOpened,
+            toggleMenu: (value) {
+              setState(() {
+                isMenuOpened = value;
+              });
+            },
+            isSubMenuOpen: _isSubMenuOpen,
+            toggleSubMenu: (value, int) {
+              setState(() {
+                _isSubMenuOpen[int] = value;
+              });
+            },
           ),
-          preferredSize: Size(screenSize.width, 70)),
+          preferredSize:
+              Size(screenSize.width, isMenuOpened ? getMenuHeight() : 120)),
       body: SingleChildScrollView(
         child: Column(
           children: [

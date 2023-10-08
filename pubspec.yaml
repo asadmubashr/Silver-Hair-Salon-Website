@@ -70,6 +70,8 @@ flutter:
     - assets/contact.png
     - assets/app1.jpg
     - assets/app2.png
+    - assets/logo.jpeg
+    - assets/aboutUs.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
@@ -100,3 +102,6 @@ flutter:
     - family: Noyh
       fonts:
       - asset: fonts/Noyh_R_W01_SemiLight.ttf
+    - family: Novecento
+      fonts:
+      - asset: fonts/Novecento_WideMedium.otf
