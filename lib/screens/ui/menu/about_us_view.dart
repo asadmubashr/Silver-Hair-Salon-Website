@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:website_base/screens/shared/aboutus/aboutus_services_widget.dart';
+import 'package:website_base/screens/shared/home/reviews_widget.dart';
 import 'package:website_base/utilities/constants.dart';
 
+import '../../shared/aboutus/about_us_result_widget.dart';
+import '../../shared/aboutus/aboutus_photo_title.dart';
 import '../../shared/bottom_bar_contents_view.dart';
 import '../../shared/home/qualities_widget.dart';
 import '../../shared/top_bar_contents_view.dart';
@@ -41,7 +45,7 @@ class _AboutUsViewState extends State<AboutUsView> {
                   width: screenSize.width,
                   height: isMenuOpened ? getMenuHeight() : 100,
                   child: TopBaContentsView(
-                    title: aboutUsMenu,
+                    title: aboutUsMenu + fullBodyTreatmentMenu,
                     opacity: _opacity,
                     isMenuOpened: isMenuOpened,
                     toggleMenu: (value) {
@@ -86,7 +90,7 @@ class _AboutUsViewState extends State<AboutUsView> {
                       child: Column(
                         children: [
                           Text(
-                            '--- About Us ---',
+                            '--- ${aboutUsMenu} ---',
                             style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 36,
@@ -128,7 +132,11 @@ class _AboutUsViewState extends State<AboutUsView> {
                     )
                   ],
                 ),
+                AboutUsPhotoTitleWidget(imageUrl: 'aboutus.png'),
                 QualitiesWidget(),
+                AboutUsResultsWidget(),
+                AboutUsServicesWidget(),
+                ReviewsWidget(),
                 BottomBarContentsView(),
               ],
             ),

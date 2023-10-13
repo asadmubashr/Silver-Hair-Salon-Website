@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:website_base/utilities/constants.dart';
+import 'package:website_base/utilities/methods.dart';
 
 class ContactUsInfoWidget extends StatefulWidget {
   const ContactUsInfoWidget({super.key});
@@ -22,23 +23,37 @@ class _ContactUsInfoWidgetState extends State<ContactUsInfoWidget> {
         SizedBox(
           height: 24,
         ),
-        Text(
-          phoneNumber,
-          style: TextStyle(color: Colors.white),
+        InkWell(
+          onHover: (value) {},
+          onTap: () {
+            AppMethods.makeCall(phoneNumber);
+          },
+          child: Text(
+            phoneNumber,
+            style: TextStyle(color: Colors.white),
+          ),
         ),
         SizedBox(
           height: 8,
         ),
-        Text(
-          emailAddress,
-          style: TextStyle(color: Colors.white),
+        InkWell(
+          onHover: (value) {},
+          onTap: () {
+            AppMethods.makeEmail();
+          },
+          child: Text(
+            emailAddress,
+            style: TextStyle(color: Colors.white),
+          ),
         ),
         SizedBox(
           height: 8,
         ),
-        Text(
-          physicalAddress,
-          style: TextStyle(color: Colors.white),
+        InkWell(
+          child: Text(
+            physicalAddress,
+            style: TextStyle(color: Colors.white),
+          ),
         )
       ],
     );

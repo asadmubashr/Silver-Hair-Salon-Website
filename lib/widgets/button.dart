@@ -50,9 +50,9 @@ class _ButtonViewState extends State<ButtonView> {
         padding: EdgeInsets.all(0),
         decoration: BoxDecoration(
             border:
-                Border.all(color: isHovering ? kPrimaryColor : widget.border!),
+                Border.all(color: isHovering ? Colors.amber : widget.border!),
             borderRadius: BorderRadius.circular(widget.borderRadius!),
-            color: isHovering ? Colors.white : widget.background),
+            color: isHovering ? Colors.transparent : widget.background),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
@@ -66,7 +66,7 @@ class _ButtonViewState extends State<ButtonView> {
             Text(
               widget.name,
               style: widget.textStyle!.merge(TextStyle(
-                  color: isHovering ? kPrimaryColor : widget.textStyle?.color)),
+                  color: isHovering ? Colors.amber : widget.textStyle?.color)),
             ),
           ],
         ),

@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:website_base/utilities/constants.dart';
 
 import '../../shared/bottom_bar_contents_view.dart';
+import '../../shared/home/gallery_widget.dart';
 import '../../shared/home/qualities_widget.dart';
 import '../../shared/top_bar_contents_view.dart';
 
@@ -41,7 +42,7 @@ class _GalleryViewState extends State<GalleryView> {
                   width: screenSize.width,
                   height: isMenuOpened ? getMenuHeight() : 100,
                   child: TopBaContentsView(
-                    title: galleryMenu,
+                    title: galleryMenu + fullBodyTreatmentMenu,
                     opacity: _opacity,
                     isMenuOpened: isMenuOpened,
                     toggleMenu: (value) {
@@ -98,7 +99,7 @@ class _GalleryViewState extends State<GalleryView> {
                     )
                   ],
                 ),
-                QualitiesWidget(),
+                GalleryWidget(),
                 BottomBarContentsView(),
               ],
             ),

@@ -150,10 +150,12 @@ class _TopBaContentsViewState extends State<TopBaContentsView> {
                                   Text(
                                     homeMenu,
                                     style: TextStyle(
-                                        fontFamily: 'Novecento',
-                                        fontSize: 18,
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w200,
                                         color: (_isHovering[0] ||
-                                                homeMenu == widget.title)
+                                                homeMenu ==
+                                                    widget.title
+                                                        .substring(0, 4))
                                             ? Colors.white
                                             : Colors.grey),
                                   ),
@@ -182,10 +184,12 @@ class _TopBaContentsViewState extends State<TopBaContentsView> {
                                   Text(
                                     aboutUsMenu,
                                     style: TextStyle(
-                                        fontFamily: 'Novecento',
-                                        fontSize: 18,
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w200,
                                         color: (_isHovering[1] ||
-                                                aboutUsMenu == widget.title)
+                                                aboutUsMenu ==
+                                                    widget.title
+                                                        .substring(0, 8))
                                             ? Colors.white
                                             : Colors.grey),
                                   ),
@@ -214,10 +218,12 @@ class _TopBaContentsViewState extends State<TopBaContentsView> {
                                   Text(
                                     galleryMenu,
                                     style: TextStyle(
-                                        fontFamily: 'Novecento',
-                                        fontSize: 18,
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w200,
                                         color: (_isHovering[2] ||
-                                                galleryMenu == widget.title)
+                                                galleryMenu ==
+                                                    widget.title
+                                                        .substring(0, 6))
                                             ? Colors.white
                                             : Colors.grey),
                                   ),
@@ -238,18 +244,19 @@ class _TopBaContentsViewState extends State<TopBaContentsView> {
                                     });
                                   }
                                 },
-                                onTap: () {
-                                  context.go('/$successRoute');
-                                },
+                                onTap: () {},
                                 child: Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Text(
                                       servicesMenu,
                                       style: TextStyle(
-                                          fontFamily: 'Novecento',
-                                          fontSize: 18,
-                                          color: _isHovering[3]
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.w200,
+                                          color: (_isHovering[3] ||
+                                                  servicesMenu ==
+                                                      widget.title
+                                                          .substring(0, 8))
                                               ? Colors.white
                                               : Colors.grey),
                                     ),
@@ -269,10 +276,13 @@ class _TopBaContentsViewState extends State<TopBaContentsView> {
                                       }
                                     },
                                     onTap: () {
-                                      context.go('/$successRoute');
+                                      context.go(subMenuServices[i].route);
                                     },
                                     child: Container(
-                                      color: _servicesIsHovering[i]
+                                      color: (_servicesIsHovering[i] ||
+                                              subMenuServices[i].name ==
+                                                  widget.title.substring(
+                                                      8, widget.title.length))
                                           ? kPrimaryColor
                                           : Colors.white,
                                       padding: EdgeInsets.symmetric(
@@ -286,10 +296,14 @@ class _TopBaContentsViewState extends State<TopBaContentsView> {
                                       child: Text(
                                         subMenuServices[i].name,
                                         style: TextStyle(
-                                            fontFamily: 'Noyh',
-                                            fontSize: 20,
-                                            fontWeight: FontWeight.w600,
-                                            color: _servicesIsHovering[i]
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.w400,
+                                            color: (_servicesIsHovering[i] ||
+                                                    subMenuServices[i].name ==
+                                                        widget.title.substring(
+                                                            8,
+                                                            widget
+                                                                .title.length))
                                                 ? Colors.white
                                                 : Colors.black),
                                       ),
@@ -323,7 +337,6 @@ class _TopBaContentsViewState extends State<TopBaContentsView> {
                                 children: [
                                   Container(
                                     height: 40,
-                                    width: 130,
                                     alignment: Alignment.center,
                                     padding: EdgeInsets.all(0),
                                     decoration: BoxDecoration(
@@ -338,8 +351,8 @@ class _TopBaContentsViewState extends State<TopBaContentsView> {
                                     child: Text(
                                       contactUsMenu,
                                       style: TextStyle(
-                                          fontFamily: 'Novecento',
-                                          fontSize: 18,
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.w200,
                                           color: _isHovering[4]
                                               ? kPrimaryColor
                                               : Colors.grey),
@@ -489,7 +502,7 @@ class _TopBaContentsViewState extends State<TopBaContentsView> {
                                     }
                                   },
                                   onTap: () {
-                                    context.go('/$successRoute');
+                                    context.go(subMenuServices[i].route);
                                   },
                                   child: Container(
                                     color: kPrimaryColor,
@@ -603,7 +616,9 @@ class _ContactViewState extends State<ContactView> {
               ]),
           alignment: Alignment.center,
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: screenSize.width < 700
+                ? MainAxisAlignment.center
+                : MainAxisAlignment.start,
             children: [
               if (screenSize.width > 700) ...[
                 Container(

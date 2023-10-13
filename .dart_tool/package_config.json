@@ -32,6 +32,12 @@
       "languageVersion": "2.18"
     },
     {
+      "name": "carousel_slider",
+      "rootUri": "file:///Users/apple/.pub-cache/hosted/pub.dev/carousel_slider-4.2.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "characters",
       "rootUri": "file:///Users/apple/.pub-cache/hosted/pub.dev/characters-1.2.1",
       "packageUri": "lib/",
@@ -308,6 +314,54 @@
       "languageVersion": "2.17"
     },
     {
+      "name": "url_launcher",
+      "rootUri": "file:///Users/apple/.pub-cache/hosted/pub.dev/url_launcher-6.1.11",
+      "packageUri": "lib/",
+      "languageVersion": "2.18"
+    },
+    {
+      "name": "url_launcher_android",
+      "rootUri": "file:///Users/apple/.pub-cache/hosted/pub.dev/url_launcher_android-6.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.19"
+    },
+    {
+      "name": "url_launcher_ios",
+      "rootUri": "file:///Users/apple/.pub-cache/hosted/pub.dev/url_launcher_ios-6.1.5",
+      "packageUri": "lib/",
+      "languageVersion": "2.19"
+    },
+    {
+      "name": "url_launcher_linux",
+      "rootUri": "file:///Users/apple/.pub-cache/hosted/pub.dev/url_launcher_linux-3.0.6",
+      "packageUri": "lib/",
+      "languageVersion": "2.19"
+    },
+    {
+      "name": "url_launcher_macos",
+      "rootUri": "file:///Users/apple/.pub-cache/hosted/pub.dev/url_launcher_macos-3.0.7",
+      "packageUri": "lib/",
+      "languageVersion": "2.19"
+    },
+    {
+      "name": "url_launcher_platform_interface",
+      "rootUri": "file:///Users/apple/.pub-cache/hosted/pub.dev/url_launcher_platform_interface-2.1.5",
+      "packageUri": "lib/",
+      "languageVersion": "2.19"
+    },
+    {
+      "name": "url_launcher_web",
+      "rootUri": "file:///Users/apple/.pub-cache/hosted/pub.dev/url_launcher_web-2.0.19",
+      "packageUri": "lib/",
+      "languageVersion": "2.19"
+    },
+    {
+      "name": "url_launcher_windows",
+      "rootUri": "file:///Users/apple/.pub-cache/hosted/pub.dev/url_launcher_windows-3.0.8",
+      "packageUri": "lib/",
+      "languageVersion": "2.19"
+    },
+    {
       "name": "url_strategy",
       "rootUri": "file:///Users/apple/.pub-cache/hosted/pub.dev/url_strategy-0.2.0",
       "packageUri": "lib/",
@@ -344,7 +398,7 @@
       "languageVersion": "2.19"
     }
   ],
-  "generated": "2023-10-08T19:54:21.392332Z",
+  "generated": "2023-10-12T08:44:07.786542Z",
   "generator": "pub",
   "generatorVersion": "2.19.6"
 }

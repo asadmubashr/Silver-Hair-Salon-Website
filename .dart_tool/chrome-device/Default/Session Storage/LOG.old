@@ -1,3 +1,7 @@
-2023/10/08-21:22:15.023 3f03 Reusing MANIFEST /private/var/folders/xs/b5dhzj7s673f0y3j0q67ln880000gn/T/flutter_tools.3P4jkF/flutter_tools_chrome_device.pGzFto/Default/Session Storage/MANIFEST-000001
-2023/10/08-21:22:15.026 3f03 Recovering log #3
-2023/10/08-21:22:15.030 3f03 Reusing old log /private/var/folders/xs/b5dhzj7s673f0y3j0q67ln880000gn/T/flutter_tools.3P4jkF/flutter_tools_chrome_device.pGzFto/Default/Session Storage/000003.log 
+2023/10/12-13:06:54.417 2e03 Reusing MANIFEST /private/var/folders/xs/b5dhzj7s673f0y3j0q67ln880000gn/T/flutter_tools.mje0FG/flutter_tools_chrome_device.b4ILQt/Default/Session Storage/MANIFEST-000001
+2023/10/12-13:06:54.421 2e03 Recovering log #7
+2023/10/12-13:06:54.423 2e03 Reusing old log /private/var/folders/xs/b5dhzj7s673f0y3j0q67ln880000gn/T/flutter_tools.mje0FG/flutter_tools_chrome_device.b4ILQt/Default/Session Storage/000007.log 
+2023/10/12-13:06:54.426 2e03 Delete type=0 #4
+2023/10/12-13:06:54.426 2e03 Delete type=0 #3
+2023/10/12-13:40:24.077 4107 Level-0 table #11: started
+2023/10/12-13:40:24.097 4107 Level-0 table #11: 50175 bytes OK

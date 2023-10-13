@@ -1,3 +1,10 @@
-2023/10/08-23:44:14.104 3e03 Reusing MANIFEST /private/var/folders/xs/b5dhzj7s673f0y3j0q67ln880000gn/T/flutter_tools.flEpoZ/flutter_tools_chrome_device.IawhHQ/Default/Session Storage/MANIFEST-000001
-2023/10/08-23:44:14.106 3e03 Recovering log #3
-2023/10/08-23:44:14.106 3e03 Reusing old log /private/var/folders/xs/b5dhzj7s673f0y3j0q67ln880000gn/T/flutter_tools.flEpoZ/flutter_tools_chrome_device.IawhHQ/Default/Session Storage/000003.log 
+2023/10/12-19:58:02.602 3c03 Reusing MANIFEST /private/var/folders/xs/b5dhzj7s673f0y3j0q67ln880000gn/T/flutter_tools.0Ll3QV/flutter_tools_chrome_device.JFMG8W/Default/Session Storage/MANIFEST-000001
+2023/10/12-19:58:02.604 3c03 Recovering log #7
+2023/10/12-19:58:02.605 3c03 Level-0 table #10: started
+2023/10/12-19:58:02.610 3c03 Level-0 table #10: 50175 bytes OK
+2023/10/12-19:58:02.611 3c03 Recovering log #10
+2023/10/12-19:58:02.612 3c03 Reusing old log /private/var/folders/xs/b5dhzj7s673f0y3j0q67ln880000gn/T/flutter_tools.0Ll3QV/flutter_tools_chrome_device.JFMG8W/Default/Session Storage/000010.log 
+2023/10/12-19:58:02.627 3c03 Delete type=0 #7
+2023/10/12-19:58:02.627 3c03 Delete type=0 #4
+2023/10/12-19:58:02.627 3c03 Delete type=0 #3
+2023/10/12-19:58:02.627 3c03 Delete type=2 #11
